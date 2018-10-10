@@ -44,7 +44,6 @@ public class DealerController{
 	private String deleteDealer(@RequestParam("dealerId") Long dealerId, Model model){
 		System.out.println("awal");
 		if(dealerService.getDealerDetailById(dealerId).isPresent()) {
-			System.out.print("masuk");
 			DealerModel dealer = dealerService.getDealerDetailById(dealerId).get();
 			dealerService.deleteDealer(dealer);
 			model.addAttribute("title", "Delete Dealer");
