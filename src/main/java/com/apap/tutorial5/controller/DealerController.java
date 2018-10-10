@@ -42,7 +42,6 @@ public class DealerController{
 	
 	@RequestMapping(value="/dealer/delete", method = RequestMethod.GET)
 	private String deleteDealer(@RequestParam("dealerId") Long dealerId, Model model){
-		System.out.println("awal");
 		if(dealerService.getDealerDetailById(dealerId).isPresent()) {
 			DealerModel dealer = dealerService.getDealerDetailById(dealerId).get();
 			dealerService.deleteDealer(dealer);
